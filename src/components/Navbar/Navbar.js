@@ -28,9 +28,9 @@ const Navbar = () => {
       <div className={`navbar-links-container ${openMenu ? "open-menu" : ""}`}>
         <div></div>
         <div className="navbar-links">
-          <ul>
+          <ul onClick={toggleMenu}>
             <li>
-              <Link to="/product">Product</Link>
+              <Link to="/products">Product</Link>
             </li>
             <li>
               <Link to="/">Solutions</Link>

@@ -34,7 +34,6 @@ export const Carousel = () => {
         "“Docsumo does a very good job when it comes to our specific use-case. Debt settlement letters vary a lot from each other, but Docsumo manages to capture data accurately almost every single time at the processing speed which is unprecedented. We’re witnessing the STP rate of over 95% with Docsumo.”",
       image:
         "https://assets-global.website-files.com/64be86eaa29fa71f24b00661/64be86eaa29fa71f24b0084e_Jones.webp",
-  
     },
   ];
 
@@ -65,8 +64,8 @@ export const Carousel = () => {
         className="inner"
         style={{ transform: `translate(-${activeIndex * 100}%)` }}
       >
-        {items.map((item) => {
-          return <CarouselItem item={item} />;
+        {items.map((item, index) => {
+          return <CarouselItem item={item} key={index} />;
         })}
       </div>
 
@@ -77,7 +76,7 @@ export const Carousel = () => {
             updateIndex(activeIndex - 1);
           }}
         >
-          <span class="prev-arrow bg-default">&#8249;</span>{" "}
+          <span className="prev-arrow bg-default">&#8249;</span>{" "}
         </button>
         <div className="indicators">
           {items.map((item, index) => {
@@ -87,6 +86,7 @@ export const Carousel = () => {
                 onClick={() => {
                   updateIndex(index);
                 }}
+                key={index}
               >
                 <span
                   className={`material-symbols-outlined ${
@@ -105,7 +105,7 @@ export const Carousel = () => {
             updateIndex(activeIndex + 1);
           }}
         >
-          <span class="next-arrow bg-default">&#8250;</span>
+          <span className="next-arrow bg-default">&#8250;</span>
         </button>
       </div>
     </div>

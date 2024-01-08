@@ -124,7 +124,6 @@ const HomePage = () => {
 
   return (
     <>
-      <Navbar />
       <main>
         <section className="hero-section bg-primary text-center text-white">
           <div className="hero-label text-grey">Document AI Platform</div>
