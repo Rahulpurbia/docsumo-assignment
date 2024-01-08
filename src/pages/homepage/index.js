@@ -116,9 +116,14 @@ const HomePage = () => {
       fetch("https://webhook.site/a4f01968-888c-4d92-8211-a793a112fe5d", {
         method: "POST",
         body: JSON.stringify(formBody),
-      }).then((response) => {
-        console.log(response);
-      });
+      })
+        .then((response) => {
+          //redirect to some page
+          //reset state
+        })
+        .catch((error) => {
+          //handle error
+        });
     }
   };
 

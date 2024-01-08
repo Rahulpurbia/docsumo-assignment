@@ -26,7 +26,7 @@ const Navbar = () => {
         onClick={toggleMenu}
       />
       <div className={`navbar-links-container ${openMenu ? "open-menu" : ""}`}>
-        <div></div>
+        <div className="alignment-placeholder"></div>
         <div className="navbar-links">
           <ul onClick={toggleMenu}>
             <li>

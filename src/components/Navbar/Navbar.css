@@ -114,6 +114,10 @@
         display: block;
     }
 
+    .alignment-placeholder {
+        display: none;
+    }
+
     .open-menu {
         transform: translateX(-100%);
     }

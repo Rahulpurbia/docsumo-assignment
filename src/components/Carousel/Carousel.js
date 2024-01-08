@@ -39,7 +39,6 @@ export const Carousel = () => {
 
   useEffect(() => {
     let timer = setInterval(() => {
-      console.log("ran", activeIndex);
       updateIndex();
     }, 10000);
 
