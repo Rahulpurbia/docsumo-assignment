@@ -1,0 +1,120 @@
+.navbar {
+    --navbar-height: 80px;
+    --navbar-links-color: #6a7180;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 5%;
+    position: relative;
+    height: var(--navbar-height);
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+
+.hamburger-menu {
+    display: none;
+}
+
+.navbar-links-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+    z-index: inherit;
+    width: 100%;
+    right: 0;
+}
+
+.navbar-links>ul {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+    justify-content: space-between;
+}
+
+.logo {
+    color: white;
+    display: flex;
+    gap: 10px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+.navbar-links li,
+.navbar-links li>a {
+    color: var(--navbar-links-color);
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 17px;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 30px;
+}
+
+
+@media screen and (max-width:1150px) {
+
+    .navbar {
+        padding-inline: 1.25rem;
+    }
+
+    .navbar-links>ul,
+    .cta-buttons {
+        gap: 25px;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .navbar-links-container {
+        position: fixed;
+        flex-direction: column;
+        background-color: white;
+        top: var(--navbar-height);
+        padding: 0px 0px 50px 0px !important;
+        height: calc(100vh - var(--navbar-height));
+        transition: all 0.2s ease-in;
+        right: -100%;
+
+    }
+
+    .navbar-links,
+    .navbar-links>ul {
+        width: 100%;
+        padding-inline: 0;
+        gap: 0;
+    }
+
+    .navbar-links li {
+        border-bottom: 0.03125rem solid #e0e4f4;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 1.125rem 1.25rem;
+        font-size: 1.125rem;
+        width: 100%;
+    }
+
+    .navbar-links>ul,
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .cta-buttons {
+        gap: 10px;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .open-menu {
+        transform: translateX(-100%);
+    }
+}

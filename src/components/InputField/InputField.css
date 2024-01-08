@@ -1,0 +1,41 @@
+.input-field-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    --error-color: #f2545b;
+}
+
+.input-field-wrapper>label {
+    font-size: 15px;
+    color: grey;
+}
+
+.input-field-wrapper>input {
+    border-radius: 5px;
+    background: transparent;
+    outline: none;
+    font-size: 16px;
+    text-indent: 5px;
+    padding-block: 10px;
+    color: white;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.78);
+
+}
+
+.input-error {
+    border: 1px solid var(--error-color) !important;
+}
+
+.input-field-wrapper>.error-text {
+    color: var(--error-color);
+    font-size: 13px;
+}
+
+.schedule-demo-button {
+    padding: 12px 35px;
+    font-size: 1rem;
+    border: none;
+    margin-top: 30px;
+}

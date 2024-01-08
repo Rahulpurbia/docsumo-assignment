@@ -1,0 +1,195 @@
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 60px;
+    padding-top: 130px;
+}
+
+.hero-label {
+    font-size: 0.95rem;
+    margin-block: 0.5rem;
+}
+
+.hero-heading {
+    font-size: 2.8rem;
+    margin-bottom: 1.75rem;
+    font-weight: bold;
+}
+
+.hero-subheading {
+    font-size: 1.9rem;
+    margin-bottom: 3.25rem;
+    font-weight: bold;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    margin-bottom: 0.6rem;
+}
+
+.hero-cta>button {
+    font-size: 17px;
+    padding: 12px 20px;
+}
+
+.achievements-text {
+    margin-top: 0.8rem;
+    gap: 15px;
+
+}
+
+.achievements-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 10px;
+    align-items: center;
+}
+
+.clients-logo {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-block: 2rem;
+}
+
+.clients-logo>div {
+    width: 100%;
+    border: 0.0625rem solid #e0e4f4;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    display: flex;
+}
+
+.clients-logo>div:not(:nth-child(4n)) {
+    border-right-style: none;
+}
+
+.clients-logo>div:nth-child(-n+4) {
+    border-bottom-style: none;
+}
+
+.lead-gen-section {
+    display: flex;
+    gap: 5rem;
+    padding-top: 6.25rem;
+    position: relative;
+    padding-bottom: 10rem;
+}
+
+.lead-gen-section::after {
+    content: "";
+    background-image: url("https://assets-global.website-files.com/64be86eaa29fa71f24b00661/64be86eaa29fa71f24b00670_Wavy.svg");
+    position: absolute;
+    bottom: 0;
+    height: 9rem;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background-size: cover;
+}
+
+.lead-gen-section>* {
+    flex: 1;
+    text-align: left;
+}
+
+.lead-gen-heading {
+    font-size: 2.5rem;
+}
+
+.lead-gen-subheading {
+    color: gray;
+    font-size: 1.1rem;
+    margin-top: 2rem;
+    margin-bottom: 3.75rem;
+}
+
+.lead-gen-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.lead-gen-left img {
+    max-width: 600px;
+    display: block;
+    margin-inline: auto;
+}
+
+
+@media screen and (max-width:500px) {
+    .hero-section {
+        padding-inline: 20px;
+    }
+
+
+    .hero-heading {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-subheading {
+        font-size: 1.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero-cta>button {
+        font-size: 1rem;
+    }
+
+    .achievements-text {
+        margin-top: 0.5rem;
+        gap: 10px;
+        font-size: 0.8rem;
+
+    }
+
+    .achievements-content img {
+        width: 120px !important;
+    }
+
+    .clients-logo>div {
+        padding: 1rem;
+    }
+
+    .clients-logo>div>img {
+        width: 55%;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .lead-gen-heading {
+        font-size: 2rem !important;
+    }
+}
+
+@media screen and (max-width:900px) {
+    .clients-logo {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .clients-logo>div:not(:nth-child(2n)) {
+        border-right-style: none !important;
+    }
+
+    .clients-logo>div:not(:nth-child(4n)) {
+        border-right-style: solid !important;
+    }
+
+    .clients-logo>div:nth-child(-n+6) {
+        border-bottom-style: none !important;
+    }
+
+    .lead-gen-section {
+        flex-direction: column;
+    }
+}
