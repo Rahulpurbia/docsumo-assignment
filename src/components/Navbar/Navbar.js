@@ -6,8 +6,14 @@ import Hamburger from "../../Images/hamburger.svg";
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
 
-  const toggleMenu = () => {
-    setOpenMenu((prev) => !prev);
+  const toggleMenu = (e) => {
+    if (e.target.className.includes("company-navlink")) {
+      e.target.classList.toggle("open-dropdown");
+    } else if (e.target.className.includes("dropdown-link")) {
+      e.target.parentElement.classList.toggle("open-dropdown");
+    } else {
+      setOpenMenu((prev) => !prev);
+    }
   };
 
   return (
@@ -27,8 +33,8 @@ const Navbar = () => {
       />
       <div className={`navbar-links-container ${openMenu ? "open-menu" : ""}`}>
         <div className="alignment-placeholder"></div>
-        <div className="navbar-links">
-          <ul onClick={toggleMenu}>
+        <div className="navbar-links h-100">
+          <ul onClick={toggleMenu} className="h-100">
             <li>
               <Link to="/products">Product</Link>
             </li>
@@ -41,8 +47,23 @@ const Navbar = () => {
             <li>
               <Link to="/">Pricing</Link>
             </li>
-            <li>
-              <Link to="/">Company</Link>
+            <li className="company-navlink">
+              <div className="flex-center dropdown-link">
+                Company <span className="dropdown-icon"></span>
+              </div>
+              <div className="company-dropdown">
+                <Link to="/about" className="dropdown-navlink flex-center">
+                  <span className="dropdown-navlink-icon flex-center">A</span>
+                  <div className="flex-column d-flex justify-content-center">
+                    <span className="dropdown-navlink-title font-bold">
+                      About Us
+                    </span>
+                    <span className="dropdown-navlink-subtitle">
+                      Enabling Enterprises to become digital and Efficient
+                    </span>
+                  </div>
+                </Link>
+              </div>
             </li>
             <li>
               <Link to="/">Resources</Link>

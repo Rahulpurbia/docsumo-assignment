@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import Navbar from "../../components/Navbar/Navbar";
+import React, { useState } from "react";
 import "./style.css";
 import { Carousel } from "../../components/Carousel/Carousel";
 import InputField from "../../components/InputField/InputField";
@@ -96,6 +95,13 @@ const HomePage = () => {
     const inputName = e.target.name;
 
     validateField(inputName, inputValue);
+  };
+
+  const blockInvalidChar = (e) => {
+    const inputName = e.target.name;
+    const invalidCharacters =
+      inputName === "phone_number" ? ["e", "E", "-"] : ["e", "E", "+", "-"];
+    invalidCharacters.includes(e.key) && e.preventDefault();
   };
 
   const handleSubmit = (e) => {
@@ -226,6 +232,7 @@ const HomePage = () => {
                 inputValue={details?.phone_number?.value}
                 handleChange={handleChange}
                 className={"mb-18px"}
+                onKeyDown={blockInvalidChar}
                 error={details?.phone_number?.error}
                 validateField={validateField}
               />
@@ -251,6 +258,7 @@ const HomePage = () => {
                 label={"Documents processed/month"}
                 name="no_of_docs"
                 type="number"
+                onKeyDown={blockInvalidChar}
                 inputValue={details?.no_of_docs?.value}
                 handleChange={handleChange}
                 className={"mb-18px"}

@@ -112,6 +112,9 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    background-color: white;
+    padding: 2.5rem 2rem 1.75rem;
+    border-radius: 5px;
 }
 
 .lead-gen-left img {

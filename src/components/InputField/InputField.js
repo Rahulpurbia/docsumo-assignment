@@ -14,6 +14,8 @@ const InputField = ({
   className,
   error = "",
   validateField,
+  onKeyUp,
+  ...restProps
 }) => {
   return (
     <div className={`input-field-wrapper ${className}`}>
@@ -28,6 +30,8 @@ const InputField = ({
         className={`${inputClassName} ${error ? "input-error" : ""}`}
         style={inputStyle}
         onBlur={(e) => validateField(e.target.name, e.target.value)}
+        onKeyUp={onKeyUp}
+        {...restProps}
       />
       {error && <small className="error-text">{error}</small>}
     </div>
